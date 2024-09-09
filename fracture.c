@@ -39,10 +39,6 @@ double calculateDistance(){
     printf("Please enter a second X and Y coordinate (seperate them by a space): ");
     scanf("%lf %lf", &xPoint2, &yPoint2);
     
-
-     // Print the points
-    printf("Point #1 entered: x1 = %.2f; y1 = %.2f\n", xPoint1, yPoint1);
-    printf("Point #2 entered: x2 = %.2f; y2 = %.2f\n", xPoint2, yPoint2);
     
     //Math to find the distance
     //distance formula is sqrt((x2-x1)^2 + (y2 - y1)^2)
@@ -62,9 +58,6 @@ double calculatePerimeter(){
     //calling distance inside of this function
     double distance = calculateDistance();
    
-   // Print the points
-    printf("Point #1 entered: x1 = %.2f; y1 = %.2f\n", xPoint1, yPoint1);
-    printf("Point #2 entered: x2 = %.2f; y2 = %.2f\n", xPoint2, yPoint2);
    
     
     //math used to find perimeter
@@ -85,10 +78,6 @@ double calculateArea(){
     //call distance again
     double distance = calculateDistance();
 
-    // Print the points
-    printf("Point #1 entered: x1 = %.2f; y1 = %.2f\n", xPoint1, yPoint1);
-    printf("Point #2 entered: x2 = %.2f; y2 = %.2f\n", xPoint2, yPoint2);
-
     //math used to find area
     // PI * (r)^2
     // I divided distance by 2 because distance alone would be the diameter. Diameter/2 is radius
@@ -99,35 +88,30 @@ double calculateArea(){
 
 }
 
-double calculateWidth() {
-    // Print the points
-    printf("Point #1 entered: x1 = %.2f; y1 = %.2f\n", xPoint1, yPoint1);
-    printf("Point #2 entered: x2 = %.2f; y2 = %.2f\n", xPoint2, yPoint2);
+//calculating width function
+double calculateWidth(){
+
+    //call distance function
+    double distance = calculateDistance();
+    //call distance for x values because the difference in x is 
+    double widthDistance = calculatedDistanceX();
+
     
-    // Calculate width (difference in x-coordinates)
-    double width = (xPoint2 - xPoint1);
-    
-    // Output the calculated width
-    printf("The width of the city encompassed by your request is %.2f\n", width);
-    
-    // Return the difficulty level (e.g., 1.0 for easy)
-    return 1.0;
+    // instructions werent clear enough for this function. It comes as redundant because I assume that the wifth is hust the x value distance
+    return 4;
 }
 
-// Height function (Outputs 3 lines, returns difficulty)
-double calculateHeight() {
-    // Print the points
-    printf("Point #1 entered: x1 = %.2f; y1 = %.2f\n", xPoint1, yPoint1);
-    printf("Point #2 entered: x2 = %.2f; y2 = %.2f\n", xPoint2, yPoint2);
+//calculating height function
+double calculateHeight(){
+   //call distance function
+   double distance = calculateDistance();
+
+   //call distance for y values, because difference in y values is height
+   double heightDistance = calculatedDistanceY();
+
+   //ca
     
-    // Calculate height (difference in y-coordinates)
-    double height = (yPoint2 - yPoint1);
-    
-    // Output the calculated height
-    printf("The height of the city encompassed by your request is %.2f\n", height);
-    
-    // Return the difficulty level (e.g., 1.0 for easy)
-    return 1.0;
+
 }
 
 
@@ -136,7 +120,7 @@ int main(int argc, char **argv){
     calculateDistance();
     calculatePerimeter();
     calculateArea();
-    calculateWidth();
-    calculateHeight();
+    //calculateWidth();
+    //calculateHeight();
     return 1;
 }
